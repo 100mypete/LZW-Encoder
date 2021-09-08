@@ -33,7 +33,7 @@ public class Encoder {
                 encoded += input.charAt(i);
                 if (i == input.length() - 1)
                     output += convertBinary(Integer.toBinaryString(map.get(encoded)), Integer.toBinaryString(size - 1).length());
-                else
+                else if (!map.containsKey(encoded + input.charAt(i+1)))
                 {
                     output += convertBinary(Integer.toBinaryString(map.get(encoded)), Integer.toBinaryString(size - 1).length());
                     if (map.size() < size)
@@ -48,9 +48,7 @@ public class Encoder {
             fos.close();
 
 
-        }
-        catch (IOException ex)
-        {
+        } catch (IOException ex){
             ex.printStackTrace();
         }
         
@@ -67,7 +65,7 @@ public class Encoder {
     public static void main (String [] args)
     {
         Encoder enc = new Encoder();
-        enc.compress();
+        enc.compress(); 
     }
 
 }
