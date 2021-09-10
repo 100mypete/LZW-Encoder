@@ -9,37 +9,7 @@ public class Encoder {
     String inputPath = "lzw-file1.txt";
     String outputPath = "output.txt";
 
-      /** Empty char array. */
-    private static final char[] EMPTY_CHAR_ARRAY = new char[0];
 
-    /** Empty byte array. */
-    private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
-
-    /** Mask for bit 0 of a byte. */
-    private static final int BIT_0 = 1;
-
-    /** Mask for bit 1 of a byte. */
-    private static final int BIT_1 = 0x02;
-
-    /** Mask for bit 2 of a byte. */
-    private static final int BIT_2 = 0x04;
-
-    /** Mask for bit 3 of a byte. */
-    private static final int BIT_3 = 0x08;
-
-    /** Mask for bit 4 of a byte. */
-    private static final int BIT_4 = 0x10;
-
-    /** Mask for bit 5 of a byte. */
-    private static final int BIT_5 = 0x20;
-
-    /** Mask for bit 6 of a byte. */
-    private static final int BIT_6 = 0x40;
-
-    /** Mask for bit 7 of a byte. */
-    private static final int BIT_7 = 0x80;
-
-    private static final int[] BITS = { BIT_0, BIT_1, BIT_2, BIT_3, BIT_4, BIT_5, BIT_6, BIT_7 };
 
     public void compress()
     {
