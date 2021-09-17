@@ -12,7 +12,8 @@ public class Encoder {
 	 public static void main (String[] args) throws IOException {
 	        Encoder enc = new Encoder();
 	       // System.out.println (enc.compress("abcabc"));
-	        System.out.println(enc.decompress(enc.compress("abcabc")));
+	        ArrayList<Integer> compressed = enc.compress("abcabc");
+	        System.out.println(enc.decompress(compressed));
 	        
 	    }
 
@@ -56,7 +57,7 @@ public class Encoder {
             map.put(i, "" + (char)i);
          for(int i = 0; i <= compressed.size(); i++) {	 
         	 //need to work on edge case at end of for loop
-        	 if (compressed.get(i+1) != null) {
+        	 if (i+1 < compressed.size()) {
         		 String current = map.get(compressed.get(i).intValue());
         		 String next = map.get(compressed.get(i+1).intValue());
         		 String fstLetNext = next.substring(0,1);
@@ -67,7 +68,7 @@ public class Encoder {
          }
          String result = "";
          for(int i = 0; i <= compressed.size(); i++) {
-        	 result +=  map.get(compressed.get(i));
+        	 result = result + map.get(compressed.get(i));
          }
          
     	
