@@ -2,8 +2,8 @@
 
 import java.util.*;
 import java.io.IOException;
-//import java.nio.charset.*;
-//import java.nio.file.*;
+import java.nio.charset.*;
+import java.nio.file.*;
 
 
 
@@ -12,21 +12,21 @@ public class Encoder {
 	 public static void main (String[] args) throws IOException {
 	        Encoder enc = new Encoder();
 	       // System.out.println (enc.compress("abcabc"));
-	        ArrayList<Integer> compressed = enc.compress("abcabc");
+	        ArrayList<Integer> compressed = enc.compress();
 	        System.out.println(enc.decompress(compressed));
 	        
 	    }
 
-    public ArrayList<Integer> compress (String str) throws IOException
+    public ArrayList<Integer> compress () throws IOException
 		{
-		    //int size = 512;
-		    //String inputPath = "lzw-file1.txt";
-		    //String outputPath = "output.txt";
+		    int size = 512;
+		    String inputPath = "lzw-file1.txt";
+		    String outputPath = "output.txt";
 		    
-		    //String str = Files.readString(Paths.get(inputPath), StandardCharsets.UTF_8);
+		    String str = Files.readString(Paths.get(inputPath), StandardCharsets.UTF_8);
 
 
-		    int size = 256;
+		    //int size = 256;
 		    HashMap<String, Integer> map = new HashMap<String, Integer>();
 		    for (int i = 0; i < 256; i++)
 		       map.put("" + (char)i, i);
